@@ -5,8 +5,14 @@ html(lang="ja")
     title DenGonBan2
   body
     h1 伝言板
+    a(href="/logout") ログアウト
     form(method="post" action="/posts")
       div
         textarea(name="content" cols=40 rows=4)
       div
         button(type="submit") 投稿
+
+  h2 投稿一覧
+  each content in contents 
+    p #{content}
+    hr
