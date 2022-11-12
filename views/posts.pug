@@ -42,7 +42,7 @@ html(lang="ja")
     hr
     each post in posts
       h3 #{post.postedBy}
-      h2!=post.content
+      h2(style="white-space:pre; overflow:auto;") #{post.content}
       - const PastFromPostedTime = Keikajikan(post.createdAt)
       p #{PastFromPostedTime}
       - let isDeletable = (user === post.postedBy || user === 'admin')
